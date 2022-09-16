@@ -102,7 +102,7 @@ Rename your file to \`[...page].astro\` or customize the param name via the \`pa
 			error.innerHTML = "Ingrese URL Https"
 		}
 		
-		fetch('http://127.0.0.1:8788/api/generate-qr', {
+		fetch('https://qr-code-6z4.pages.dev/api/generate-qr', {
 			method: "POST",
 			body: JSON.stringify({ url: url.toString() }),
 			headers: {
@@ -131,8 +131,8 @@ Rename your file to \`[...page].astro\` or customize the param name via the \`pa
 		</div>
 	</main>`})}
 
-`}),Vi="D:/Dev/qr-url-astro/qr-url/src/pages/index.astro",Wi="",Ji=Object.freeze(Object.defineProperty({__proto__:null,$$metadata:Ii,default:Tt,file:Vi,url:Wi},Symbol.toStringTag,{value:"Module"})),Zi=new Map([["src/pages/index.astro",Ji]]),Yi=[Object.assign({name:"astro:jsx",serverEntrypoint:"astro/jsx/server.js",jsxImportSource:"astro"},{ssr:Li})],Ot=Object.assign($i({adapterName:"@astrojs/cloudflare",routes:[{file:"",links:["assets/index.3416c339.css"],scripts:[{type:"inline",value:`const o=document.querySelector("#qr-form"),s=document.querySelector("#url-error"),c=document.querySelector("#result");o.addEventListener("submit",t=>{t.preventDefault();const r=new URL(t.target[0].value);r.protocol!=="https:"&&(s.innerHTML="Ingrese URL Https"),fetch("http://127.0.0.1:8788/api/generate-qr",{method:"POST",body:JSON.stringify({url:r.toString()}),headers:{"Content-Type":"application/json"}}).then(e=>e.json()).then(e=>{const{svg:n}=e;c.innerHTML=n})});
-`}],routeData:{route:"/",type:"page",pattern:"^\\/$",segments:[],params:[],component:"src/pages/index.astro",pathname:"/",_meta:{trailingSlash:"ignore"}}}],base:"/",markdown:{drafts:!1,syntaxHighlight:"shiki",shikiConfig:{langs:[],theme:"github-dark",wrap:!1},remarkPlugins:[],rehypePlugins:[],remarkRehype:{},extendDefaultPlugins:!1,isAstroFlavoredMd:!1},pageMap:null,renderers:[],entryModules:{"\0@astrojs-ssr-virtual-entry":"_worker.js","/astro/hoisted.js?q=0":"hoisted.3bc4115d.js","astro:scripts/before-hydration.js":""},assets:["/assets/index.3416c339.css","/favicon.svg","/qr-code-scan-icon.svg"]}),{pageMap:Zi,renderers:Yi}),Gi=void 0,Xi=_t(Ot),Ki=Xi.onRequest,ot="start";ot in tt&&tt[ot](Ot,Gi);export{Ki as onRequest};
+`}),Vi="D:/Dev/qr-url-astro/qr-url/src/pages/index.astro",Wi="",Ji=Object.freeze(Object.defineProperty({__proto__:null,$$metadata:Ii,default:Tt,file:Vi,url:Wi},Symbol.toStringTag,{value:"Module"})),Zi=new Map([["src/pages/index.astro",Ji]]),Yi=[Object.assign({name:"astro:jsx",serverEntrypoint:"astro/jsx/server.js",jsxImportSource:"astro"},{ssr:Li})],Ot=Object.assign($i({adapterName:"@astrojs/cloudflare",routes:[{file:"",links:["assets/index.3416c339.css"],scripts:[{type:"inline",value:`const o=document.querySelector("#qr-form"),s=document.querySelector("#url-error"),c=document.querySelector("#result");o.addEventListener("submit",t=>{t.preventDefault();const r=new URL(t.target[0].value);r.protocol!=="https:"&&(s.innerHTML="Ingrese URL Https"),fetch("https://qr-code-6z4.pages.dev/api/generate-qr",{method:"POST",body:JSON.stringify({url:r.toString()}),headers:{"Content-Type":"application/json"}}).then(e=>e.json()).then(e=>{const{svg:n}=e;c.innerHTML=n})});
+`}],routeData:{route:"/",type:"page",pattern:"^\\/$",segments:[],params:[],component:"src/pages/index.astro",pathname:"/",_meta:{trailingSlash:"ignore"}}}],base:"/",markdown:{drafts:!1,syntaxHighlight:"shiki",shikiConfig:{langs:[],theme:"github-dark",wrap:!1},remarkPlugins:[],rehypePlugins:[],remarkRehype:{},extendDefaultPlugins:!1,isAstroFlavoredMd:!1},pageMap:null,renderers:[],entryModules:{"\0@astrojs-ssr-virtual-entry":"_worker.js","/astro/hoisted.js?q=0":"hoisted.1ab97e87.js","astro:scripts/before-hydration.js":""},assets:["/assets/index.3416c339.css","/favicon.svg","/qr-code-scan-icon.svg"]}),{pageMap:Zi,renderers:Yi}),Gi=void 0,Xi=_t(Ot),Ki=Xi.onRequest,ot="start";ot in tt&&tt[ot](Ot,Gi);export{Ki as onRequest};
 /**
  * shortdash - https://github.com/bibig/node-shorthash
  *

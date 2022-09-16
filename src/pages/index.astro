@@ -33,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
 			error.innerHTML = "Ingrese URL Https"
 		}
 		
-		fetch('http://127.0.0.1:8788/api/generate-qr', {
+		fetch('https://qr-code-6z4.pages.dev/api/generate-qr', {
 			method: "POST",
 			body: JSON.stringify({ url: url.toString() }),
 			headers: {
