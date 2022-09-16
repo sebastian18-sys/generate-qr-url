@@ -1,0 +1,7 @@
+EDGE FUNCTIONS
+
+- Funciones que no tienen un servidor por debajo que levantan (una vez se invocan) y se cierran.
+-  Funciones que se ejecutan cerca de los usuarios (servidores pequeños cercanos -> poca latencia)
+
+npx wrangler pages publish dist -> Production
+npx wrangler pages dev ./dist -> Dev

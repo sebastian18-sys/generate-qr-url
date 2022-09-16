@@ -6,16 +6,45 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Welcome to Astro.">
 	<main class="min-h-screen grid place-content-center">
 		<div class="bg-white rounded-2xl w-80 p-4 flex flex-col gap-4">
-			<picture class="bg-blue-500 pb-2">
-				<img class="rounded-xl overflow-hidden" src="" alt="qr" />
+			<picture id="result" class="bg-blue-500 rounded-xl overflow-hidden p-4">
 			</picture>
-			
-			<h1 class="font-bold text-xl text-center px-4">Ingresa una URL</h1>
-			<form>
-				<input type="url" class="border-2 px-4 py-2 rounded-md w-full" placeholder="https://..." />
+			<form id="qr-form">
+				<label class="font-bold text-xl text-center pb-4" for="">
+					<span class="block pb-3">Ingresa una URL</span>
+					<input type="url" class="border-2 font-normal text-lg px-4 py-2 rounded-md w-full" placeholder="https://..." />
+					<span class="text-xs text-red-500" id="url-error"></span>
+				</label>
 			</form>
 			<p class="text-sm text-center text-gray-500 px-6">Para generar/crear Codigo QR!</p>
 		</div>
 	</main>
 </Layout>
+
+<script>
+	const form = document.querySelector("#qr-form")
+	const error = document.querySelector("#url-error")
+	const result = document.querySelector("#result")
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault()
+		const url = new URL(e.target[0].value)
+
+		if(url.protocol !== "https:") {
+			error.innerHTML = "Ingrese URL Https"
+		}
+		
+		fetch('http://127.0.0.1:8788/api/generate-qr', {
+			method: "POST",
+			body: JSON.stringify({ url: url.toString() }),
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				const { svg } = data
+				result.innerHTML = svg
+			})
+	})
+</script>
 
